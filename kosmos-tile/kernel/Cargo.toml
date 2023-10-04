@@ -1,0 +1,12 @@
+[package]
+name = "kosmos-tile-kernel"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+crate-type = ["dylib", "lib"]
+
+[dependencies]
+spirv-std = { version = "0.9" }
+kosmos-tile-shared = { path = "../shared" }
+bytemuck = { version = "1.6.3", features = ["derive"] }

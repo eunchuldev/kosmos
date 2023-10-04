@@ -1,0 +1,20 @@
+[package]
+name = "kosmos-tile"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+kosmos-tile-shared = { path = "./shared" }
+wgpu = { version = "^0.17", features = ["spirv", "vulkan-portability"] }
+bytemuck = { version = "^1", features = ["derive"] }
+#futures = { version = "0.3", default-features = false, features = ["std", "executor"] }
+async-lock = "^2"
+async-channel = "^1"
+futures-lite = "^1"
+blocking = "^1"
+anyhow = "^1"
+
+[build-dependencies]
+spirv-builder = "0.9"

@@ -1,0 +1,27 @@
+[package]
+name = "kosmos"
+version = "0.1.0"
+edition = "2021"
+
+[workspace]
+members = [
+  "kosmos-tile",
+  "kosmos-tile/kernel",
+  "kosmos-tile/shared",
+]
+
+[dependencies]
+futures-lite = "^1"
+kosmos-tile = { path = "./kosmos-tile" }
+winit = "0.29.1-beta"
+
+[dev-dependencies]
+criterion = { version = "0.3", features = ["async_smol"] }
+
+[[bench]]
+name = "tile_tick"
+harness = false
+
+[profile.release.build-override]
+opt-level = 3
+codegen-units = 16
